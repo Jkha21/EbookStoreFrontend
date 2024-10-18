@@ -1,0 +1,92 @@
+.ebkStore-orderWrapper-cnt{
+    padding: 19px 30px 32px 36px;
+    height: 237px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #a6a4a4;
+    border-radius: 1px;
+    opacity: 1;
+    gap: 31px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.ebkStore-orderHeaderLabel-cnt{
+    width: 16%;
+    height: 24px;
+    text-align: left;
+    font: normal normal medium 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+}
+
+
+.ebkStore-orderDetailsFinal-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 42px;
+}
+
+.orderDetailsLabelCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.ebkStore-orderBookName-cnt{
+    font: normal normal normal 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-orderAuthorCnt-cnt{
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1
+}
+
+.ebkStore-orderPriceCnt-cnt{
+    font: normal normal bold 15px/18px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-mrpOrderCnt-cnt{
+    text-decoration: line-through;
+    font: normal normal normal 9px/11px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.ebkStore-priceCntOrder-cnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.ebkStore-checkoutOrderBtn-cnt{
+    width: 20%;
+    height: 35px;
+/* UI Properties */
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    font: normal normal medium 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.ebkStore-checkoutBtn-cnt{
+    display: flex;
+    justify-content: end;
+}

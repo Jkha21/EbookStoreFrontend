@@ -1,10 +1,15 @@
-.ebkStore-mainWrapper-cnt{
+.ebkStore-cartMainWrapper-cnt{
     width: 57%;
     margin-left: 13%;
     margin-right: 30%;
-    margin-top: 20px;
-    height: 251px;
-    /* UI Properties */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.ebkStore-mainWrapper-cnt{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 1px;
