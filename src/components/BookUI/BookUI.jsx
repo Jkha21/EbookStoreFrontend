@@ -6,15 +6,34 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import BookIcon03 from '../../assets/Image 11.png'
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCart } from '../../utils/Store/CartSlice'; 
 
 const BookUI = () =>{
+    const path = useLocation();
+    let res = useSelector((store) => store.cart.cartlist);
+    const [{bookImage, discountPrice, _id, bookName, author, description, price}] = path.state|| [{}];
+    const [qty, setQuantity] = useState(0);
+    const dispatch = useDispatch();
+    const handleClick = (action) =>{
+        if(action === "add"){
+            setQuantity(qty+1);             
+            let quantity = qty + 1;
+            dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity}));
+            console.log(res);
+        }else if(action === "remove"){
+            setQuantity(qty-1);
+        }
+    }
     return (
         <>
             
             <div className="ebkStore-wrapperBookUI-cnt">
                 <div className="ebkStore-routeLink-cnt">
                     <Breadcrumbs aria-label="breadcrumb">
-                        <Link underline="hover" color="inherit" className="ebkStore-link01-cnt">
+                        <Link underline="hover" color="inherit" className="ebkStore-link01-cnt" href="/book">
                         Home
                         </Link>
                         <Link underline="hover"  className='ebkStore-link02-cnt'>
@@ -29,9 +48,14 @@ const BookUI = () =>{
                             <img src={BookIcon02} alt="book2" className="ebkStore-img02-cnt" />
                         </div>
                         <div className="ebkStore-bookImgLink-cnt">
-                            <img src={BookIcon03} alt="book" className="ebkStore-bookImgLarge-cnt" />
+                            <img src={bookImage?bookImage:BookIcon} alt="book" className="ebkStore-bookImgLarge-cnt" />
                             <div className="ebkStrore-buttonCntlink-cnt">
-                                <button className="ebkStore-addtoCartbt-cnt">ADD TO BAG</button>
+                                {!qty?<button className="ebkStore-addtoCartbt-cnt" onClick={() => handleClick("add")}>ADD TO BAG</button>:
+                                <div className="ebkStore-bookUIQuantityCnt-cnt">
+                                    <button className="ebkStore-removeQtyCnt-cnt" onClick={() => handleClick("remove")} >-</button>
+                                    <input type="text" className="ebkStore-quantityCnt-cnt" value={qty}/>
+                                    <button className="ebkStore-addQtyCnt-cnt" onClick={() => handleClick("add")}>+</button>
+                                </div>}
                                 <button className="ebkStore-wishlistbt-cnt">
                                     🤍 WISHLIST
                                 </button>
@@ -40,22 +64,22 @@ const BookUI = () =>{
                     </div>
                     <div className="ebookStore-detailsRating-cnt">
                         <div className="ebkStore-bookDetails-cnt">
-                            <span className="ebkStore-bookNameData-cnt">Don't Make me Think</span>
-                            <span className="ebkStore-authorNameData-cnt">by Steve Krug</span>
+                            <span className="ebkStore-bookNameData-cnt">{bookName}</span>
+                            <span className="ebkStore-authorNameData-cnt">by {author}</span>
                             <div className="ebkStore-starLabel-cnt">
                                 <span className="ebkStore-ratingCnt-cnt">4.5</span>
                                 <StarIcon className='ebookStore-starLabelicon-cnt' style={{height: '13px'}}/>
                                 <span className='ebkStore-ratingCount-cnt'>(20)</span>
                             </div>
                             <div className='ebkStore-bookUIPriceCnt-cnt'>
-                                <span className='ebkStore-bookUIpricelLabel-cnt'>Rs 1500</span>
-                                <span className='ebkStore-bookUImrplabel-cnt'>Rs 2000</span>
+                                <span className='ebkStore-bookUIpricelLabel-cnt'>Rs {price}</span>
+                                <span className='ebkStore-bookUImrplabel-cnt'>Rs {price+discountPrice}</span>
                             </div>
                         </div>
                         <div className='ebookStore-lineBookSeparate-cnt'></div>
                         <div className="ebookStore-bookDescription-cnt">
                             <li className="ebookStore-bookdetailsLabelcnt-cnt">Book Details</li>
-                            <div className="ebookStore-bookDesLabel-cnt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores eveniet ex similique, pariatur animi, nostrum provident rem in facilis aspernatur unde veniam distinctio fuga ad iusto voluptatibus officiis consequuntur debitis.</div>
+                            <div className="ebookStore-bookDesLabel-cnt">{description}</div>
                         </div>
                         <div className='ebookStore-lineBookSeparate-cnt'></div>
                         <div className="ebkStore-feedbackWrapper-cnt">

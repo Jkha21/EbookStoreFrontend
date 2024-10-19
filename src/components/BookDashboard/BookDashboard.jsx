@@ -6,24 +6,23 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import { getAllBooks } from '../../utils/Api';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import getBooks from '../../utils/Store/BookSlice.js';
+import { getBooks } from '../../utils/Store/BookSlice';
 
 const BookDashboard = () =>{
     const dispatch = useDispatch();
-    const getBooks = async() =>{
-        try{
+    const fetchBooks = async () => {
+        try {
             const books = await getAllBooks('getallbooks');
-            console.log(books.data.data)
-            // dispatch(getBooks(books.data.data));
-        }catch(error){
-            throw new Error("Not able to get Books");
+            dispatch(getBooks(books.data.data)); 
+        } catch (error) {
+            console.error("Not able to get Books:", error);
         }
-    }
-    
-    useEffect(() =>{
-        getBooks();
-    }, []);
+    };
 
+    useEffect(() => {
+        fetchBooks(); 
+    }, []); 
+    
 
     return(
         <>

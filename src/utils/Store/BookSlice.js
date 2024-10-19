@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const bookSlice = createSlice({
     name: "books",
     initialState: {
-        books: []
+        book: []
     },
     reducers: {
         getBooks: (state, action) => {
-            state.books = action.payload;
+            state.book = action.payload;
         }
     }
 });

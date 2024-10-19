@@ -60,3 +60,18 @@
     border-right-color: transparent;
 }
 
+@media (min-width: 350px) and (max-width: 600px){
+    .ebkStore-wrapper-cnt{
+        width: calc(100% - 2px);
+        padding-left: 20px;
+        padding-right: 10px;
+    }   
+
+    .ebkStore-profile-cnt{
+        padding: 10px;
+    }
+    
+    .ebkStore-cart-cnt{
+        padding: 10px;
+    }
+}

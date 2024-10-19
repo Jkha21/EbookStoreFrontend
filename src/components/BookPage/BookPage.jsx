@@ -1,18 +1,24 @@
 import './BookPage.scss';
-import bookIcon from '../../assets/bookicon.png'
-import StarIcon from '@mui/icons-material/Star';
 import { useSelector } from 'react-redux';
+import SubBookUI from './SubBookUI'; 
+import { useNavigate } from 'react-router-dom';
 
 const BookPage = () =>{
-    const booksList = useSelector((store) => store.books.books);
-    console.log(booksList);
+    const booksList = useSelector((store) => store.books.book);
+    const navigate = useNavigate();
+    const handleClick = (id) =>{
+        const data = booksList.filter(book => book._id === id);
+        console.log(data)
+        navigate('/bookNo', {state: data});   
+    }
+
     return (
         <>
             
             <div className='ebkStore-bookHeader-cnt'>
                 <div className="ebkStore-booksCount-cnt">
                     <span className="ebkStore-booklabel-cnt">Books</span>
-                    <span className="ebkStore-bookCountlabel-cnt">(128items)</span>
+                    <span className="ebkStore-bookCountlabel-cnt">({booksList.length} items)</span>
                 </div>
                 <select name="rank" id="ebkStore-sort-cnt" className="ebkStore-sorting-cnt">
                     <option value="Sort" className="ebkStore-option1-cnt">Sort by relevance</option>
@@ -21,25 +27,12 @@ const BookPage = () =>{
                     <option value="Newest Arrivals" className="ebkStore-option1-cnt">Newest Arrivals</option>
                 </select>
             </div>
-            <div className="ebkStore-mainBookWrapper-cnt">
-                <div className="ebkStore-bookImgLabel-cnt">
-                    <div className="ebkStore-mainBookimglabel-cnt">
-                        <img src={bookIcon} alt='book' className='ebkStore-bookitemImg-cnt'/>
-                    </div>
-                    <div className="ebkStore-bookDetails-cnt">
-                        <span className="ebkStore-bookNameLabel-cnt">Don't Make me Think</span>
-                        <span className="ebkStore-bookAuthorLabel-cnt">by Steve King</span>
-                        <div className="ebkStore-starLabel-cnt">
-                            <span className="ebkStore-ratingCnt-cnt">4.5</span>
-                            <StarIcon className='ebookStore-starLabelicon-cnt' style={{height: '13px'}}/>
-                            <span className='ebkStore-ratingCount-cnt'>(20)</span>
-                        </div>
-                        <div className='ebkStore-priceCnt-cnt'>
-                            <span className='ebkStore-pricelLabel-cnt'>Rs 1500</span>
-                            <span className='ebkStore-mrplabel-cnt'>Rs 2000</span>
-                        </div>
-                    </div>
-                </div>
+            <div className="ebkStore-bookPageCnt-cnt">
+                {
+                    booksList.map((bookList, index) => 
+                        <SubBookUI bookDetails = {bookList}  handleClick={handleClick}/>
+                    )
+                }
             </div>
         </>
     )

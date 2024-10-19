@@ -5,6 +5,11 @@
     padding: 22px 12.8% 31px 12.7%;
 }
 
+.ebkStore-subBookCnt-cnt{
+    width: 18%;
+    cursor: pointer;
+}
+
 .ebkStore-booklabel-cnt{
     width: 70px;
     height: 33px;   
@@ -36,16 +41,29 @@
 }
 
 
+.ebkStore-bookImgLabel-cnt{
+    height: 275px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+
 .ebkStore-mainBookimglabel-cnt{
     // padding: 20px 20px 17px 20px ;
     padding-top: 17px;
     padding-bottom: 20px;
     padding-left: 40px;
     padding-right: 42px;
-    // height: 172px;
+    max-height: 172px;
     background: #F5F5F5 0% 0% no-repeat padding-box;
     border-radius: 2px 2px 0px 0px;
     opacity: 1;
+}
+
+.ebkStore-bookitemImg-cnt{
+    max-height: 135px;
 }
 
 .ebkStore-pageBookDetails-cnt{
@@ -140,11 +158,19 @@
 }
 
 
-.ebkStore-bookPageCnt-cnt{
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 16px;
-    width: 75%;
-    padding-left: 12.5%;
+@media (min-width: 600px) and (max-width: 900px){
+ .ebkStore-subBookCnt-cnt{
+    width: 40%;
+ }   
 }
 
+@media (min-width: 350px) and (max-width: 600px){
+    .ebkStore-subBookCnt-cnt{
+        width: 70%;
+    }
+
+    .ebkStore-sorting-cnt{
+        width: 40%;
+    }
+
+}
