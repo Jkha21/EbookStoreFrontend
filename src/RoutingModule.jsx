@@ -3,6 +3,7 @@ import BookDashboard from "./components/BookDashboard/BookDashboard";
 import BookPage from "./components/BookPage/BookPage";
 import BookUI from "./components/BookUI/BookUI";
 import Cart from './components/Cart/Cart';
+import OrderPage from "./components/OrderPage/OrderPage"; 
 
 const RoutingModule = () =>{
     const AppRoute = createBrowserRouter([
@@ -21,6 +22,10 @@ const RoutingModule = () =>{
                 {
                     path: 'cart',
                     element: <Cart/>
+                },
+                {
+                    path: 'order',
+                    element: <OrderPage/>
                 }
             ]
         }

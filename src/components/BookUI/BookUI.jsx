@@ -13,17 +13,22 @@ import { getCart } from '../../utils/Store/CartSlice';
 
 const BookUI = () =>{
     const path = useLocation();
+    const [addBtn, setAddBtn] = useState(false);
     let res = useSelector((store) => store.cart.cartlist);
     const [{bookImage, discountPrice, _id, bookName, author, description, price}] = path.state|| [{}];
-    const [qty, setQuantity] = useState(0);
+    const [qty, setQuantity] = useState(1);
     const dispatch = useDispatch();
     const handleClick = (action) =>{
-        if(action === "add"){
+        if(action === "add" && qty > 0){
+            setAddBtn(true)
             setQuantity(qty+1);             
             let quantity = qty + 1;
             dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity}));
             console.log(res);
-        }else if(action === "remove"){
+        }else if(action === "remove" && qty === 1){
+            setQuantity(qty-1);
+            setAddBtn(false);
+        }else if(action === "remove" && qty > 1){
             setQuantity(qty-1);
         }
     }
@@ -50,7 +55,7 @@ const BookUI = () =>{
                         <div className="ebkStore-bookImgLink-cnt">
                             <img src={bookImage?bookImage:BookIcon} alt="book" className="ebkStore-bookImgLarge-cnt" />
                             <div className="ebkStrore-buttonCntlink-cnt">
-                                {!qty?<button className="ebkStore-addtoCartbt-cnt" onClick={() => handleClick("add")}>ADD TO BAG</button>:
+                                {addBtn?<button className="ebkStore-addtoCartbt-cnt" onClick={() => handleClick("add")}>ADD TO BAG</button>:
                                 <div className="ebkStore-bookUIQuantityCnt-cnt">
                                     <button className="ebkStore-removeQtyCnt-cnt" onClick={() => handleClick("remove")} >-</button>
                                     <input type="text" className="ebkStore-quantityCnt-cnt" value={qty}/>

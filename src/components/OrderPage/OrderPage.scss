@@ -1,0 +1,98 @@
+.ebkStore-orderPageWrapper-cnt{
+    width: 55%;
+    padding-left: 22.5%;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.ebkStore-orderPageImg02-cnt{
+    width: 30%
+}
+
+.ebkStore-orderPage01-cnt{
+    width: 35%;
+}
+
+.ebkStore-orderPageLabel-cnt{
+    height: 30px;
+    text-align: center;
+    font: normal normal bold 25px/30px Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    text-transform: capitalize;
+    opacity: 1;
+    margin-top: 28px;
+    margin-bottom: 15px;
+}
+
+.ebkStore-orderPageId-cnt{
+    // width: ;
+    text-align: center;
+    font: normal normal normal 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+}
+
+.ebkStore-orderPageImgCnt-cnt{
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ebkStore-orderImagetableCnt-cnt{
+    width: 100%;
+}
+
+.ebkStore-tableCnt-cnt{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    opacity: 1;
+    text-align: center;
+        td{
+            padding: 10px;
+        }
+}
+
+.ebkStore-tr01Cnt-cnt{
+    height: 42px;
+    font-size: 20px;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    opacity: 1;
+    padding-left: 10px;
+}
+
+.ebkStore-tr02Cnt-cnt{
+    height: 70px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    opacity: 1;
+}
+
+.ebkStore-tr1td02Cnt-cnt{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.ebkStore-orderPageContinueBtn-cnt{
+    text-align: center;
+    width: 27%;
+    height: 35px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    font: normal normal medium 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    &:hover{
+        cursor: pointer;
+    }
+}   
