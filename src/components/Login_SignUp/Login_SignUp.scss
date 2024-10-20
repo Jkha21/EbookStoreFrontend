@@ -1,0 +1,97 @@
+.ebkStore-loginSignUpWrapper-cnt{
+    background: #000000 0% 0% no-repeat padding-box;
+    // opacity: 0.31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.ebkStore-shoppingImg-cnt{
+    width: 37%;
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.ebkStore-onlineShoppingWraper-cnt{
+    position: relative;
+    width: 48%;
+    height: 391px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 21px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 53px;
+}
+
+.ebkStore-loginSignUpCnt-cnt{
+    position: absolute;
+    width: calc(29% - 10%);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 25%;
+    padding: 20px 60px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.ebkStore-loginSignUpHeader-cnt{
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 0.4px;
+    color: #0A0102;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 25px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+
+.ebkStore-signupLabel-cnt{
+    font-size: 25px;
+    letter-spacing: 0.4px;
+    color: #878787;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+}
+
+.ebkStore-loginLabel-cnt{
+    text-align: left;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.ebkStore-activeCnt-cnt{
+    display: flex;
+    align-items: center;
+    height: 5px;
+    width: 22px;
+/* UI Properties */
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+.ebkStore-activeBar-cnt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}

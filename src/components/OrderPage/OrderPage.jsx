@@ -26,7 +26,7 @@ const OrderPage = () =>{
                     </tr>
                     <tr className="ebkStore-tr02Cnt-cnt">
                         <td className="ebkStore-tr1td01Cnt-cnt">admin@bookstore.com</td>
-                        <td className="ebkStore-tr1td02Cnt-cnt" style={{paddingLeft: "30px",paddingRight: "30px"}}> +91 8163476881</td>
+                        <td className="ebkStore-tr1td02Cnt-cnt"> +91 8163476881</td>
                         <td className="ebkStore-tr1td03Cnt-cnt">42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore 560034</td>
                     </tr>
                 </table>

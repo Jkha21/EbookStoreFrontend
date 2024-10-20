@@ -4,6 +4,7 @@ import BookPage from "./components/BookPage/BookPage";
 import BookUI from "./components/BookUI/BookUI";
 import Cart from './components/Cart/Cart';
 import OrderPage from "./components/OrderPage/OrderPage"; 
+import Login_SignUp from "./components/Login_SignUp/Login_SignUp";
 
 const RoutingModule = () =>{
     const AppRoute = createBrowserRouter([
@@ -26,6 +27,10 @@ const RoutingModule = () =>{
                 {
                     path: 'order',
                     element: <OrderPage/>
+                },
+                {
+                    path: 'login_signup',
+                    element: <Login_SignUp />
                 }
             ]
         }

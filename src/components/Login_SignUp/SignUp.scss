@@ -1,0 +1,109 @@
+.ebkStore-signUpCntWrapper-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ebkStore-fullNameSignUpCnt-cnt{
+    display: flex;
+    flex-direction: column;
+}
+
+.ebkStore-emailIdSignUpCnt-cnt{
+    display: flex;
+    flex-direction: column;
+}
+
+.ebkStore-passwordSignUpCnt-cnt{
+    display: flex;
+    flex-direction: column;
+}
+
+.ebkStore-mobileNoSignUpCnt-cnt{
+    display: flex;
+    flex-direction: column;
+}
+
+.ebkStore-fullNameSignUpLabel-cnt{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-emailIdLabelCnt-cnt{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-passwordSignUpLabel-cnt{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-mobileNoSignUpLabel-cnt{
+    text-align: left;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-signUpBtn-cnt{
+    height: 37px;
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    font: normal normal normal 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.ebkStore-fullNameInputCnt-cnt{
+    height: 35px;
+/* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-emailIdInputCnt-cnt{
+    height: 35px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-passwordSignUpInput-cnt{
+    height: 35px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-mobileNoInput-cnt{
+    height: 35px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+input{
+    padding-left: 10px;
+}
