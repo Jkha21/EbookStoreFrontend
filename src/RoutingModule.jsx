@@ -5,6 +5,7 @@ import BookUI from "./components/BookUI/BookUI";
 import Cart from './components/Cart/Cart';
 import OrderPage from "./components/OrderPage/OrderPage"; 
 import Login_SignUp from "./components/Login_SignUp/Login_SignUp";
+import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 
 const RoutingModule = () =>{
     const AppRoute = createBrowserRouter([
@@ -31,6 +32,10 @@ const RoutingModule = () =>{
                 {
                     path: 'login_signup',
                     element: <Login_SignUp />
+                },
+                {
+                    path: 'forgetPwd',
+                    element: <ForgetPassword/>
                 }
             ]
         }
