@@ -1,0 +1,125 @@
+.ebkStore-orderlistWrapper-cnt{
+    width: 75%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    margin-bottom: 213px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.ebkStore-orderlistItems-cnt{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E4E4E4;
+    opacity: 1;
+    padding: 34px 53px 32px 36px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ebkStore-orderlistDetails-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 27%;
+    gap: 38px;
+}
+
+.ebkStore-orderDetailsdetailsLabel-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.ebkStore-orderDetailsbookImg-cnt{
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.ebkStore-orderDetailsNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-orderDetailsAuthorLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.ebkStore-orderDetailsPriceLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+}
+
+.ebkStore-orderDetailsPrice-cnt{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+
+.ebkStore-orderDetailsDiscountPrice-cnt{
+    text-align: left;
+    text-decoration: line-through;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.ebkStore-orderlistDate-cnt{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    display: flex;
+    // align-items: center;
+    gap: 5px;
+}
+
+.ebkStore-orderlistbody-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ebkStore-liveOrderDetails-cnt{
+    width: 10px;
+    height: 10px;
+    background: #26A541 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: 4.3px;
+    animation: blink-animation 0.7s steps(5, start) infinite;
+
+}
+
+@keyframes blink-animation {
+    0%, 100% {
+        opacity: 1; // Fully visible
+    }
+    50% {
+        opacity: 0; // Fully invisible
+    }
+}

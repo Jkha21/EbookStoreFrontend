@@ -1,6 +1,8 @@
 import './OrderDetails.scss';
+import { useNavigate } from 'react-router-dom';
 import bookIcon from '../../assets/Image 11.png'
 const OrderDetails = () =>{
+    const navigate = useNavigate();
     return (
         <>
             <div className="ebkStore-orderWrapper-cnt">
@@ -17,7 +19,7 @@ const OrderDetails = () =>{
                     </div>
                 </div>
                     <div className="ebkStore-checkoutBtn-cnt">
-                        <button className="ebkStore-checkoutOrderBtn-cnt">CHECKOUT</button>
+                        <button className="ebkStore-checkoutOrderBtn-cnt" onClick={() => navigate("/order")} >CHECKOUT</button>
                     </div>
             </div>
         </>

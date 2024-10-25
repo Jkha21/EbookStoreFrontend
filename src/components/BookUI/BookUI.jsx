@@ -9,27 +9,26 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCart } from '../../utils/Store/CartSlice'; 
+import { getCart, removeItem } from '../../utils/Store/CartSlice'; 
 
 const BookUI = () =>{
     const path = useLocation();
-    const [addBtn, setAddBtn] = useState(false);
-    let res = useSelector((store) => store.cart.cartlist);
     const [{bookImage, discountPrice, _id, bookName, author, description, price}] = path.state|| [{}];
-    const [qty, setQuantity] = useState(1);
+    const getBookList = useSelector((store) => store.cart.cartlist);
+    const [quantity, setQuantity] = useState(0);
     const dispatch = useDispatch();
     const handleClick = (action) =>{
-        if(action === "add" && qty > 0){
-            setAddBtn(true)
-            setQuantity(qty+1);             
-            let quantity = qty + 1;
-            dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity}));
-            console.log(res);
-        }else if(action === "remove" && qty === 1){
-            setQuantity(qty-1);
-            setAddBtn(false);
-        }else if(action === "remove" && qty > 1){
-            setQuantity(qty-1);
+        if(action === "add"){
+            setQuantity(quantity+1);             
+            let addQty = quantity + 1;
+            dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity: addQty}));
+        }else if(action === "remove" && quantity === 0){
+            setQuantity(quantity-1);
+            dispatch(removeItem({bookImage, bookName, author, price, discountPrice, _id, quantity}));
+        }else if(action === "remove"){
+            setQuantity(quantity-1);             
+            let addQty = quantity - 1;
+            dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity: addQty}));
         }
     }
     return (
@@ -55,10 +54,10 @@ const BookUI = () =>{
                         <div className="ebkStore-bookImgLink-cnt">
                             <img src={bookImage?bookImage:BookIcon} alt="book" className="ebkStore-bookImgLarge-cnt" />
                             <div className="ebkStrore-buttonCntlink-cnt">
-                                {addBtn?<button className="ebkStore-addtoCartbt-cnt" onClick={() => handleClick("add")}>ADD TO BAG</button>:
+                                {!quantity?<button className="ebkStore-addtoCartbt-cnt" onClick={() => handleClick("add")}>ADD TO BAG</button>:
                                 <div className="ebkStore-bookUIQuantityCnt-cnt">
                                     <button className="ebkStore-removeQtyCnt-cnt" onClick={() => handleClick("remove")} >-</button>
-                                    <input type="text" className="ebkStore-quantityCnt-cnt" value={qty}/>
+                                    <input type="text" className="ebkStore-quantityCnt-cnt" value={quantity}/>
                                     <button className="ebkStore-addQtyCnt-cnt" onClick={() => handleClick("add")}>+</button>
                                 </div>}
                                 <button className="ebkStore-wishlistbt-cnt">

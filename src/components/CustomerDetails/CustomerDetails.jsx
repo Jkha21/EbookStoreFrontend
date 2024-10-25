@@ -1,6 +1,6 @@
 import './CustomerDetails.scss';
 
-const CustomerDetails = () =>{
+const CustomerDetails = ({handleOrder}) =>{
     return (
         <>
             <div className="ebkStore-cdWrapper-cnt">
@@ -49,7 +49,7 @@ const CustomerDetails = () =>{
                         </div>
                     </form>
                         <div className="ebkStore-continueBtnCnt-cnt">
-                            <button className="ebkStore-continueBtn-cnt">CONTINUE</button>
+                            <button className="ebkStore-continueBtn-cnt" onClick={() => handleOrder()}>CONTINUE</button>
                         </div>
                 </div>
             </div>            

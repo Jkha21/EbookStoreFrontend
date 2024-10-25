@@ -59,6 +59,7 @@
 .ebkStore-bookDetailsOrder-cnt{
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .ebkStore-orderImg-cnt{
@@ -169,6 +170,7 @@
 }
 
 .ebkStore-removeItem-cnt{
+    cursor: pointer;
     width: 42px;
     height: 15px;
     text-align: left;

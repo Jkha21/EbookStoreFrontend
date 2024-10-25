@@ -73,6 +73,7 @@
 }
 
 .ebkStore-checkoutOrderBtn-cnt{
+    cursor: pointer;
     width: 20%;
     height: 35px;
 /* UI Properties */
@@ -84,6 +85,9 @@
     color: #FFFFFF;
     text-transform: uppercase;
     opacity: 1;
+    &:hover{
+        background-color: gray;
+    }
 }
 
 .ebkStore-checkoutBtn-cnt{

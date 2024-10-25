@@ -3,14 +3,23 @@ import shoppingIcon from '../../assets/2766594.png';
 import { useState } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import Modal from '@mui/material/Modal';
 
-const Login_SignUp = () =>{
+const Login_SignUp = ({handleUserDetails}) =>{
     const [open, setOpen] = useState(true);
     const handleClick = () =>{
         setOpen(!open);
     }
+    const handleModal = () =>{  
+        if(localStorage.getItem("accessToken")){
+            setOpen(!open);
+        }
+    }
+    
+
     return (
         <>
+        <Modal open={open} className="ebkStore-modalWrapper-cnt">
         <div className="ebkStore-loginSignUpWrapper-cnt">
             <div className="ebkStore-onlineShoppingWraper-cnt">
                 <img src={shoppingIcon} alt="shop" className="ebkStore-shoppingImg-cnt" />
@@ -31,11 +40,11 @@ const Login_SignUp = () =>{
                     </div>
                 </div>
                 {
-                    open?<Login/>: <SignUp/>
+                    open?<Login handletoLogin={handleModal} handleUserDetails={handleUserDetails}/>: <SignUp handletoLogin={handleClick}/>
                 }
             </div>
         </div>
-        
+        </Modal>
         
         </>
     )

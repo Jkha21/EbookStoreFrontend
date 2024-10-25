@@ -2,7 +2,7 @@ import bookIcon from '../../assets/bookicon.png'
 import StarIcon from '@mui/icons-material/Star';
 import './SubBookUI.scss';
 
-const SubBookUI = ({bookDetails, key, handleClick}) => {
+const SubBookUI = ({bookDetails,  handleClick}) => {
     const {bookImage, discountPrice, _id, bookName, author, quantity, price} = bookDetails;
     
 

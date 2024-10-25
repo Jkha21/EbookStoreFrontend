@@ -8,7 +8,6 @@ const BookPage = () =>{
     const navigate = useNavigate();
     const handleClick = (id) =>{
         const data = booksList.filter(book => book._id === id);
-        console.log(data)
         navigate('/bookNo', {state: data});   
     }
 
@@ -30,7 +29,7 @@ const BookPage = () =>{
             <div className="ebkStore-bookPageCnt-cnt">
                 {
                     booksList.map((bookList, index) => 
-                        <SubBookUI bookDetails = {bookList}  handleClick={handleClick}/>
+                        <SubBookUI bookDetails = {bookList}  handleClick={handleClick} key={index}/>
                     )
                 }
             </div>

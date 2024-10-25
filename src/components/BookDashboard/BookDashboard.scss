@@ -13,6 +13,7 @@
 .ebkStore-bookheader-cnt{
     color: white;
     margin-right: 42px;
+    cursor: pointer ;
 }
 
 .ebkStore-bookImg-cnt{
@@ -21,6 +22,7 @@
     background: transparent 0% 0% no-repeat padding-box;
     opacity: 1;
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .ebkStore-Search-cnt{
@@ -49,6 +51,7 @@
     gap: 5px;
     border: 1px rgb(73, 72, 72) solid;
     padding: 5px 25px;
+    cursor: pointer;
 }
 
 .ebkStore-profile-cnt{
@@ -58,6 +61,168 @@
     border: 1px rgb(74, 73, 73) solid;
     padding: 5px 25px;
     border-right-color: transparent;
+    cursor: pointer;
+}
+
+.ebkStore-profileMenuCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 57px 20px 20px;
+    gap:14px;
+}
+
+
+.ebkStore-loginMenu01Cnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ebkStore-welcomelabelCnt-cnt{
+    text-align: left;
+    font: normal normal medium 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-ordersMenu01-cnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.ebkStore-wishlistCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.ebkStore-divider-cnt{
+    border: 1px solid gray;
+}
+
+.ebkStore-loginsignUpbtn-cnt{
+    cursor: pointer;
+    width: 50%;
+    height: 33px;
+    border: 1px solid #A03037;
+    border-radius: 2px;
+    opacity: 1;
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #A03037;
+    opacity: 1;
+    background-color: white;
+}
+
+.ebkStore-divider-cnt{
+    opacity: 0.4;
+}
+
+.ebkStore-orderlabelMenu01-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.ebkStore-wishlistMenuIcon-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.ebkStore-orderIconMenuUI-cnt{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+.ebkStore-wishlistMenuIcon-cnt{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
+
+.ebkStore-nameLabelCntMenu-cnt{
+    text-align: left;
+    font: normal normal medium 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-profileLabelMenu-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+    
+}
+
+.ebkStore-orderMenuLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.ebkStore-wishlistLabelMenu-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+
+.ebkStore-profileMenuLabel-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.ebkStore-orderMenuCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.ebkStore-wishlistMenuCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+
+.ebkStore-logoutCnt-cnt{
+    display: flex;
+    justify-content: center;
+}
+
+.ebkStore-linkMenu-cnt{
+    height: 33px;
+    border: 1px solid #A03037;
+    border-radius: 2px;
+    opacity: 1;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #A03037;
+    opacity: 1;
+    width: 80%;
+    cursor: pointer;
 }
 
 @media (min-width: 350px) and (max-width: 600px){
@@ -75,3 +240,5 @@
         padding: 10px;
     }
 }
+
+

@@ -7,10 +7,13 @@ const wishlistSlice = createSlice({
     },
     reducers: {
         getWishlist: (state, action) => {
-            state.wishlist = action.payload
+            const obj = state.wishlist.find(item => item._id === state.payload._id);
+            if(!obj){
+                state.wishlist.push(action.payload);
+            }
         }
     }
 });
 
 export const { getWishlist } = wishlistSlice.actions;
-export default getWishlist.reducer;
+export default wishlistSlice.reducer;
