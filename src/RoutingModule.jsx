@@ -8,6 +8,7 @@ import Login_SignUp from "./components/Login_SignUp/Login_SignUp";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import OrderList from "./components/OrderList/OrderList";
 import Profile from "./components/Profile/Profile";
+import Wishlist from "./components/WIshlist/Wishlist";
 
 const RoutingModule = () =>{
     const AppRoute = createBrowserRouter([
@@ -46,6 +47,10 @@ const RoutingModule = () =>{
                 {
                     path: "profile",
                     element: <Profile/>
+                },
+                {
+                    path: "wishlist",
+                    element: <Wishlist/>
                 }
             ]
         }

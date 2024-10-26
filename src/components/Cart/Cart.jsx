@@ -5,19 +5,18 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import SubCart from './SubCart.jsx';
 import Login_SignUp from '../Login_SignUp/Login_SignUp.jsx'
+import { useOutletContext } from 'react-router-dom';
 
 const Cart = () =>{
+    const { handleLogin, handleLogout } = useOutletContext();
     const cartList = useSelector((store) => store.cart.cartlist);
-    const [open, setOpen] = useState(false);
+    const [open, setOpenLogin] = useState(false);
     const [details, setDetails] = useState(false);
     const [order, setOrder] = useState(false);
     let token = null;
-    useEffect(() =>{
-        console.log(cartList);
-    }, [cartList]);
     const handleClick = () =>{
         token = localStorage.getItem("accessToken");
-        token?setDetails(true):setOpen(true);
+        token?setDetails(true):setOpenLogin(true);
         
     }
 
@@ -53,7 +52,7 @@ const Cart = () =>{
                     Order Details
                 </div>
                 }
-                {open&&<Login_SignUp/>}
+                {open&&<Login_SignUp handleLogin={handleLogin} handleLogout={handleLogout}/>}
                 </div>
         </>
     )

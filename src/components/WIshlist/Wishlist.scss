@@ -1,0 +1,106 @@
+.ebkStore-wishlistLink-cnt{
+    padding-top: 19px;
+    width: 75%;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+}
+
+.ebkStore-wishlistWrapper-cnt{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E4E4E4;
+    opacity: 1;
+    margin-top: 17px;
+}
+
+.ebkStore-wishlistHeader-cnt{
+    height: 55px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E4E4E4;
+    border-radius: 1px;
+    opacity: 1;
+    padding-left: 36px;
+    padding-top: 17px;
+    padding-bottom: 14px;
+    text-align: left;
+    font: normal normal 500 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+.ebkStore-wishlistWrapperChildren-cnt{
+    padding: 40px;
+    border: 1px solid #E4E4E4;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ebkStore-wishlistDetailsBook-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.ebkStore-wishlistDetailsCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ebkStore-wishlistDetailsNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-delWishlistBtn-cnt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ebkStore-delWishlistBtnIcon-cnt{
+    cursor: pointer;
+}
+
+.ebkStore-wishlistDetailsAuthorLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.ebkStore-wishlistDetailsPriceCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.ebkStore-wishlistDetailsPrice-cnt{
+    text-align: left;
+    font: normal normal bold 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-wishlistDetailsTotalPriceCnt-cnt{
+    text-align: left;
+    text-decoration: line-through;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+}

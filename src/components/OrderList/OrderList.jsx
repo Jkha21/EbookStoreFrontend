@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 const OrderList = () => {
-    const token = localStorage.getItem("accessToken");
     const orderlist = useSelector((store) => store.OrderList.orderlist); 
     
     return (
@@ -20,7 +19,7 @@ const OrderList = () => {
                         My Order
                     </Link>
                 </Breadcrumbs>
-                {token&&orderlist.length ? orderlist.forEach(orderDetails => (
+                {orderlist.forEach(orderDetails => (
                     <div className="ebkStore-orderlistItems-cnt">
                         <div className="ebkStore-orderlistbody-cnt">
                             <div className="ebkStore-orderlistDetails-cnt">
@@ -40,7 +39,7 @@ const OrderList = () => {
                             </div>
                         </div>
                     </div>
-                )) : null}
+                ))}
             </div>
         </>
     );

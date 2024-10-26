@@ -35,9 +35,13 @@ const cartSlice = createSlice({
             }else{
                 state.cartlist.push(action.payload);
             }
+        },
+
+        resetCartList: (state, action) => {
+            state.cartlist = [];
         }
     }
 });
 
-export const { getCart, removeItem, getData } = cartSlice.actions;
+export const { getCart, removeItem, getData, resetCartList } = cartSlice.actions;
 export default cartSlice.reducer;

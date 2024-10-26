@@ -12,9 +12,10 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Login_SignUp from '../Login_SignUp/Login_SignUp';
 import Badge from '@mui/material/Badge';
-import { getCart, getData } from '../../utils/Store/CartSlice';
-import { getWishlist } from '../../utils/Store/WishlistSlice';
-import { getOrderList } from '../../utils/Store/OrderSlice';
+import { getCart, getData, resetCartList } from '../../utils/Store/CartSlice';
+import { getWishlist, resetWishList } from '../../utils/Store/WishlistSlice';
+import { getOrderList, resetOrderList } from '../../utils/Store/OrderSlice';
+import Modal from '@mui/material/Modal';
 
 
 
@@ -29,6 +30,7 @@ const BookDashboard = () =>{
     const [menu, setMenu] = useState(false);
     const [cartQty, setCartQty] = useState();
     const token = localStorage.getItem("accessToken");
+    const [openModal, setOpenModal] = useState(false);
     useEffect(() => {
         fetchBooks(); 
         getData();
@@ -66,6 +68,12 @@ const BookDashboard = () =>{
             console.error("Not able to get Books:", error);
         }
     };
+
+    const handleClickModal = () =>{
+        setOpenModal(!openModal);
+        setOpen(true);
+    }
+    
     
     const handleClick = () =>{
         navigate("/cart")
@@ -77,14 +85,29 @@ const BookDashboard = () =>{
     }
 
     const handleLogin = () =>{
-        setLogin(!login);
-        setOpen(true);
-        
+        setMenu(!menu);
+        setOpenModal(!openModal);
+        let token = localStorage.getItem("accessToken");
+        token?setOpenModal(false): setOpenModal(true);
     }
     
     const handleLogout = () =>{
         localStorage.removeItem("accessToken");
         setOpen(false);
+        setMenu(!menu);
+        dispatch(resetCartList());
+        dispatch(resetOrderList());
+        dispatch(resetWishList());
+    }
+
+    const handleClose = () =>{
+        setOpenModal(false)
+    }
+
+    const handleModal = () =>{  
+        if(localStorage.getItem("accessToken")){
+            setOpen(!open);
+        }
     }
 
     
@@ -99,11 +122,11 @@ const BookDashboard = () =>{
                 <div className="ebkStore-profile-cnt" onClick={handleMenu}>
                     < PersonOutlineOutlinedIcon />
                     <span className="ebkStore-profileHeader-cnt" >Profile</span>
-                    <Menu open={menu} anchorEl={target}>
+                    <Menu open={menu} anchorEl={target} onClose={handleClose}>
                         {open?
                         <div className="ebkStore-profileMenuCnt-cnt">
                             <div className="ebkStore-nameLabelCntMenu-cnt">Hello, {name}</div>
-                            <div className="ebkStore-profileMenuLabel-cnt">
+                            <div className="ebkStore-profileMenuLabel-cnt" onClick={() => navigate("/profile")}>
                                 <PersonOutlineOutlinedIcon className='ebkStore-profileMenuIcon-cnt'/>
                                 <span className="ebkStore-profileLabelMenu-cnt">Profile</span>
                             </div>
@@ -111,7 +134,7 @@ const BookDashboard = () =>{
                                     <LocalMallOutlinedIcon className="ebkStore-orderIconMenu-cnt"/>
                                 <span className="ebkStore-orderMenuLabel-cnt">My Orders</span>
                             </div>
-                            <div className="ebkStore-wishlistMenuCnt-cnt">
+                            <div className="ebkStore-wishlistMenuCnt-cnt" onClick={() => navigate("/wishlist")}>
                                 <FavoriteBorderOutlinedIcon className="ebkStore-wishlistIcon-cnt"/>
                                 <span className="ebkStore-wishlistLabelMenu-cnt">My Wishlist</span>
                             </div>
@@ -130,7 +153,7 @@ const BookDashboard = () =>{
                                     <LocalMallOutlinedIcon className='ebkStore-orderIconMenuUI-cnt'/>
                                     <span className="ebkStore-orderlabelMenu01-cnt">My Orders</span>
                                 </div>
-                                <div className="ebkStore-wishlistCnt-cnt">
+                                <div className="ebkStore-wishlistCnt-cnt" >
                                     <FavoriteBorderOutlinedIcon className='ebkStore-wishlistIconMenuUI-cnt'/>
                                     <span className="ebkStore-wishlistMenuIcon-cnt">Wishlist</span>
                                 </div>
@@ -138,16 +161,15 @@ const BookDashboard = () =>{
                     </Menu>
                 </div>
                 <div className="ebkStore-cart-cnt" onClick={handleClick}>
-                <Badge badgeContent={cartQty > 0 ? cartQty : undefined} color="primary">
-    <ShoppingCartIcon />
-</Badge>
-
+                        <Badge badgeContent={cartQty || undefined} color="primary">
+                            <ShoppingCartIcon />
+                        </Badge>
                     <span className='ebkStore-cartHeader-cnt'>Cart</span>
                 </div>
             </div>
-            {!login&&<Login_SignUp />}
+            <Modal open={openModal} onClose={handleClose} className="ebkStore-modalWrapper-cnt"><Login_SignUp handleModal={handleClickModal}/></Modal>
         </div>
-        <Outlet/>
+        <Outlet context={handleLogin}/>
         </>
     )
 }

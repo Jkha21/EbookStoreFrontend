@@ -11,9 +11,13 @@ const OrderlistSlice = createSlice({
             if(!obj){
                 state.orderlist.push(action.payload);
             }
+        },
+
+        resetOrderList: (state, action) => {
+            state.orderlist = [];
         }
     }
 })
 
-export const { getOrderList } = OrderlistSlice.actions;
+export const { getOrderList, resetOrderList } = OrderlistSlice.actions;
 export default OrderlistSlice.reducer;

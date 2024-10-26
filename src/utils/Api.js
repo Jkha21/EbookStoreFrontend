@@ -60,7 +60,7 @@ export const WishlistItem = async(endpoint, payload) =>{
 
 
 export const WishlistAddItem = async(endpoint, payload) => {
-    return await axios.post(`${BASE_URL_WISHLIST}/`, payload, {
+    return await axios.post(`${BASE_URL_WISHLIST}/${endpoint}`, payload, {
         headers: {
             Authorization: getAuth()
         }

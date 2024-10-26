@@ -10,6 +10,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart, removeItem } from '../../utils/Store/CartSlice'; 
+import { getWishlist } from '../../utils/Store/WishlistSlice';
+import { WishlistAddItem } from '../../utils/Api';
 
 const BookUI = () =>{
     const path = useLocation();
@@ -17,7 +19,7 @@ const BookUI = () =>{
     const getBookList = useSelector((store) => store.cart.cartlist);
     const [quantity, setQuantity] = useState(0);
     const dispatch = useDispatch();
-    const handleClick = (action) =>{
+    const handleClick = async(action) =>{
         if(action === "add"){
             setQuantity(quantity+1);             
             let addQty = quantity + 1;
@@ -29,6 +31,9 @@ const BookUI = () =>{
             setQuantity(quantity-1);             
             let addQty = quantity - 1;
             dispatch(getCart({bookImage, bookName, author, price, discountPrice, _id, quantity: addQty}));
+        }else if(action === "wishlist"){
+            await WishlistAddItem("/addItem", {bookImage, bookName, author, price, discountPrice, bookId: _id})
+            dispatch(getWishlist({bookImage, bookName, author, price, discountPrice, _id}));
         }
     }
     return (
@@ -60,7 +65,7 @@ const BookUI = () =>{
                                     <input type="text" className="ebkStore-quantityCnt-cnt" value={quantity}/>
                                     <button className="ebkStore-addQtyCnt-cnt" onClick={() => handleClick("add")}>+</button>
                                 </div>}
-                                <button className="ebkStore-wishlistbt-cnt">
+                                <button className="ebkStore-wishlistbt-cnt" onClick={() => handleClick("wishlist")}>
                                     🤍 WISHLIST
                                 </button>
                             </div>
