@@ -5,3 +5,323 @@
     margin-bottom: 213px;
     margin-top: 30px;
 }
+
+.ebkStore-profileWrapperCnt-ct{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ebkStore-profileSpanLabel-cnt{
+    text-align: left;
+    font: normal normal 500 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    padding-right: 20px;
+}
+
+.ebkStore-profileEditBtn-cnt{
+    text-align: left;
+    font: normal normal 400 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #A03037;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.ebkStore-profileFullNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-profileFullNameCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.ebkStore-profileEmailIdNameCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ebkStore-profileEmailidNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-profileEmailIdInputCnt-cnt{
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+    height: 45px;
+}
+
+.ebkStore-profileFullNameInput-cnt{
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+    height: 45px;
+}
+
+.ebkStore-profilePasswordCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ebkStore-profilePasswordNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-profilePasswordInput-cnt{
+    height: 45px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-profileMobNoNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.ebkStore-profileMobNoInput-cnt{
+    height: 45px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-profileMobNoCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ebkStore-profileAddressHeaderCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ebkStore-profileAddressDetailsWrapper-cnt{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+    margin-top: 30px;
+}
+
+.ebkStore-profileAddressHeaderLabel-cnt{
+    text-align: left;
+    font: normal normal 500 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-profileAddAddressBtn-cnt{
+    height: 29px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #A03037;
+    border-radius: 2px;
+    opacity: 1;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #A03037;
+    opacity: 1;
+}
+
+.ebkStore-profileTypeAddressNameLabel-cnt{
+    text-align: left;
+    font: normal normal 500 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    margin-right: 20px;
+}
+
+.ebkStore-profileAddressEditBtn-cnt{
+    text-align: left;
+    font: normal normal 400 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #A03037;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.ebkStore-profileAddressLabelCnt-cnt{
+    display: flex;
+    flex-direction:column ;
+    gap: 5px;
+}
+
+.ebkStore-profileFullAdddressNameInput-cnt{
+    height: 82px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-profileAddressNameLabelType-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-profileStateTownCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    // gap: 10px;
+    justify-content: space-between;
+}
+
+.ebkStore-profileStateInputCnt-cnt{
+    width: 100%;
+    height: 45px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-profileCityCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ebkStore-profileStateLabelCnt-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-profileStateAddressCnt-cnt{
+    display: flex;
+   flex-direction: column; 
+   gap: 5px;
+   justify-content: space-between;
+}
+
+.ebkStore-typeStateAddressInputCnt-cnt{
+    height: 45px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #DCDCDC;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.ebkStore-typeAddressLabelNameLabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-typeAddressRadiolabel-cnt{
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.ebkStore-typeAddressRadioCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ebkStore-typeAddressRadioBtnCnt-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ebkStore-editUserProfile-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ebkStore-profileTypeAddressLabel-cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ebkStore-editUserSaveBtn-cnt{
+    width: 24%;
+    height: 34px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    font: normal normal 500 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.ebkStore-editSaveAddressProfile-cnt{
+    width: 24%;
+    height: 34px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    font: normal normal 500 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.ebkStore-profileEditCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ebkStore-addressEditCnt-cnt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

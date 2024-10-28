@@ -8,7 +8,7 @@ const SignUp = ({handletoLogin}) =>{
     const [password, setPassword] = useState("");
     const [mobileNo, setMobileNo ] = useState("");
     const handleClick = () =>{
-        const data = SignUpUser('', {FullName:name, EmailId:emailId, Password: password, MobileNo: mobileNo});
+        const data = SignUpUser('', {FullName: name, EmailId: emailId, Password: password, MobileNo: mobileNo});
         if (data){
             handletoLogin();
         }

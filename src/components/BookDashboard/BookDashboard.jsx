@@ -31,6 +31,7 @@ const BookDashboard = () =>{
     const [cartQty, setCartQty] = useState();
     const token = localStorage.getItem("accessToken");
     const [openModal, setOpenModal] = useState(false);
+    const [data, setData] = useState([{}]);
     useEffect(() => {
         fetchBooks(); 
         getData();
@@ -110,6 +111,10 @@ const BookDashboard = () =>{
         }
     }
 
+    const handleData = (details) =>{
+        setData(details?.data?.data);
+    }
+
     
 
     return(
@@ -126,7 +131,7 @@ const BookDashboard = () =>{
                         {open?
                         <div className="ebkStore-profileMenuCnt-cnt">
                             <div className="ebkStore-nameLabelCntMenu-cnt">Hello, {name}</div>
-                            <div className="ebkStore-profileMenuLabel-cnt" onClick={() => navigate("/profile")}>
+                            <div className="ebkStore-profileMenuLabel-cnt" onClick={() => navigate("/profile", {state: data})}>
                                 <PersonOutlineOutlinedIcon className='ebkStore-profileMenuIcon-cnt'/>
                                 <span className="ebkStore-profileLabelMenu-cnt">Profile</span>
                             </div>
@@ -167,7 +172,7 @@ const BookDashboard = () =>{
                     <span className='ebkStore-cartHeader-cnt'>Cart</span>
                 </div>
             </div>
-            <Modal open={openModal} onClose={handleClose} className="ebkStore-modalWrapper-cnt"><Login_SignUp handleModal={handleClickModal}/></Modal>
+            <Modal open={openModal} onClose={handleClose} className="ebkStore-modalWrapper-cnt"><Login_SignUp handleModal={handleClickModal} handleData = {handleData}/></Modal>
         </div>
         <Outlet context={handleLogin}/>
         </>

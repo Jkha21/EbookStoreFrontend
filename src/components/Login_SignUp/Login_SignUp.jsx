@@ -5,7 +5,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Modal from '@mui/material/Modal';
 
-const Login_SignUp = ({handleLogin, handleLogout, handleModal}) =>{
+const Login_SignUp = ({handleModal, handleData}) =>{
     const [open, setOpen] = useState(true);
     
     const handleClick = () =>{
@@ -35,7 +35,7 @@ const Login_SignUp = ({handleLogin, handleLogout, handleModal}) =>{
                     </div>
                 </div>
                 {
-                    open?<Login handletoLogin={handleModal}  />: <SignUp handletoLogin={handleClick}/>
+                    open?<Login handletoLogin={handleModal} handleData={handleData}  />: <SignUp handletoLogin={handleClick}/>
                 }
             </div>
         </div>

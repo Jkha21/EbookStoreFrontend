@@ -23,6 +23,10 @@ const Cart = () =>{
     const handleOrder = () =>{
         setOrder(true);
     }
+
+    const handleAddress = (data) =>{
+        const shippingAddress = data;
+    }
         
     return (
         <>
@@ -42,12 +46,12 @@ const Cart = () =>{
                         </div>
                     </div>
                 </div>
-                {details?<CustomerDetails handleOrder={handleOrder}/>: 
+                {details?<CustomerDetails handleOrder={handleOrder} handleAddress={handleAddress}/>: 
                 <div className="ebkStore-DetailsWrapper-cnt">
                     Address Details
                 </div>
                 }
-                {order?<OrderDetails />:
+                {order?<OrderDetails orderlist={cartList} />:
                 <div className="ebkStore-orderDetailsConditionWrapper-cnt">
                     Order Details
                 </div>

@@ -4,7 +4,7 @@ const BASE_URL_BOOKS = "http://localhost:4000/api/v1/book";
 const BASE_URL_CART = "http://localhost:4000/api/v1/cart";
 const BASE_URL_WISHLIST = "http://localhost:4000/api/v1/wishlist";
 const BASE_URL_ORDER = "http://localhost:4000/api/v1/order";
-
+const BASE_URL_CUSTOMER = "http://localhost:4000/api/v1/customer"
 
 const getAuth = () =>{
     return `Bearer ${localStorage.getItem('accessToken')}`;
@@ -103,3 +103,31 @@ export const GetOrderlist = async(endpoint) => {
         }
     })
 };
+
+export const GetCustomerList = async(endpoint) => {
+    return await axios.get(`${BASE_URL_CUSTOMER}/${endpoint}`, {
+        headers: {
+            Authorization: getAuth()           
+        }
+    })
+}
+
+export const AddCustomerList = async(endpoint, payload) =>{
+    return await axios.post(`${BASE_URL_CUSTOMER}/${endpoint}`, payload, {
+        headers: {
+            Authorization: getAuth()
+        }
+    })
+}
+
+export const EditCustomerList = async(endpoint, payload) => {
+    return await axios.put(`${BASE_URL_CUSTOMER}/${endpoint}`, payload, {
+        Authorization: getAuth()
+    })
+}
+
+export const AddAddressList = async(endpoint, payload) =>{
+    return await axios.put(`${ BASE_URL_CUSTOMER}/${endpoint}`, payload, {
+        Authorization: getAuth()
+    })
+}

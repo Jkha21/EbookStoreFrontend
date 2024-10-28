@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AddItem, AddOrderItems, CartList, GetOrderItems, GetOrderlist, GetWishlist, LoginUser, UpdateCartItem, WishlistAddItem, WishlistItem } from '../../utils/Api';
+import { AddCustomerList, AddItem, AddOrderItems, CartList, GetOrderItems, GetOrderlist, GetWishlist, LoginUser, UpdateCartItem, WishlistAddItem, WishlistItem } from '../../utils/Api';
 import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import { getData } from '../../utils/Store/CartSlice';
 import { getWishlist } from '../../utils/Store/WishlistSlice';
 import { getOrderList } from '../../utils/Store/OrderSlice';
 
-const Login = ({handletoLogin}) =>{
+const Login = ({handletoLogin, handleData}) =>{
     const navigate = useNavigate();
     const [emailId, setEmailId] = useState("");
     const [password, setPassword] = useState("");
@@ -26,9 +26,13 @@ const Login = ({handletoLogin}) =>{
         if(!token){
             const data = await LoginUser('/login', {EmailId: emailId, Password: password});
             if(data){
+                handleData(data);
                 localStorage.setItem("accessToken", data.data.data.Token);
                 localStorage.setItem("name", data.data.data.FullName);
                 handletoLogin();
+                const {FullName, EmailId, Password, MobileNo} = data.data.data;
+                const customerDetails = await AddCustomerList("/addItem", {FullName, EmailId, Password, MobileNo});
+                console.log(customerDetails)
                 const cartResponse = (await CartList(data.data.data.Token));
                 const cartData = cartResponse.data.data.length?cartResponse.data.data[0].books: [];
                 if (cartData.length > 0 && cartReduxData.length > 0) {

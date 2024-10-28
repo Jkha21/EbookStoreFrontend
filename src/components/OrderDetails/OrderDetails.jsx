@@ -1,8 +1,13 @@
 import './OrderDetails.scss';
 import { useNavigate } from 'react-router-dom';
 import bookIcon from '../../assets/Image 11.png'
-const OrderDetails = () =>{
+import { AddOrderItems } from '../../utils/Api';
+const OrderDetails = ({orderlist, addressDetails}) =>{
+    const handleSubmit = async() =>{
+        const data = await AddOrderItems("/addItem", )
+    }
     const navigate = useNavigate();
+
     return (
         <>
             <div className="ebkStore-orderWrapper-cnt">
